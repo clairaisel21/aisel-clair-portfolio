@@ -160,5 +160,14 @@
       alert("Thank you! This is a demo. We'll connect the real form soon.");
     });
   </script>
+  <script>
+    // Show success message after form submission
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === 'true') {
+      document.getElementById('success-message').classList.remove('hidden');
+      // Clean the URL
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  </script>
 </body>
 </html>
